@@ -50,32 +50,49 @@ int main()
         else if( izbor == 3 )
         {
             unsigned long long int brtelefona;
+            bool postoji = false;
             cout << " Unesite broj telefona kojeg zelite pronaci: ";
             cin >> brtelefona;
-            broj postoji = false;
             for (int i = 0; i < brojOsoba; i++)
             {
                 if (brtelefona == brTelefona[i])
                 {
+                    cout << " postoji u imeniku " << endl;
+                    cout << prezimeIme[i] << endl;
+                    cout << adresa[i] << endl;
                     postoji = true;
                     break;
                 }
-                if (brtelefona != brtelefona[i])
+                if (brtelefona == false )
                 {
-                    postoji = false;
-                    break;
+                    cout << " Ne postoji " << endl;
                 }
             }
         }
         else if( izbor == 4 )
         {
+            string prezimeime;
+            bool postoji = false;
+            cout << " unesite ime i prezime osobe koju zelite pronaci: " << endl;
+            cin.ignore();
+            getline(cin, prezimeime);
             for (int i = 0; i < brojOsoba; i++)
             {
-                ime i prezime postoji = false;
-                cin >> prezimeIme[brojOsoba];
-                cout << brTelefona[brojOsoba];
-                cout << adresa[brojOsoba];
+                if (prezimeime == prezimeIme[i])
+                {
+                    cout << " postoji u imeniku ";
+                    cout << brTelefona[i];
+                    cout << adresa[i];
+                    postoji = true;
+                    break;
+                }
+                if ( postoji == false )
+                {
+                    cout << " ne postoji " << endl;
+                    break;
+                }
             }
+
         }
         else if( izbor == 5 )
         {
