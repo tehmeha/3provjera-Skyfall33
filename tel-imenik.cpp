@@ -35,6 +35,13 @@ int main()
             cout << "Unesite adresu: " << endl;
             cin.ignore();
             getline(cin, adresa[brojOsoba]);
+
+            datotekaUpisivanje.open("imenik.txt", ios::app);
+            datotekaUpisivanje << prezimeIme[brojOsoba] << endl;
+            datotekaUpisivanje << brTelefona[brojOsoba] << endl;
+            datotekaUpisivanje << adresa[brojOsoba] << endl;
+            datotekaUpisivanje.close();
+
             brojOsoba++;
         }
         else if( izbor == 2 )
@@ -80,9 +87,9 @@ int main()
             {
                 if (prezimeime == prezimeIme[i])
                 {
-                    cout << " postoji u imeniku ";
-                    cout << brTelefona[i];
-                    cout << adresa[i];
+                    cout << " postoji u imeniku " << endl;;
+                    cout << brTelefona[i] << endl;
+                    cout << adresa[i] << endl;
                     postoji = true;
                     break;
                 }
@@ -100,6 +107,7 @@ int main()
         }
         else if( izbor == 6 )
         {
+
         }
         else if( izbor == 7 )
         {
